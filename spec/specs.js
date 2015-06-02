@@ -1,19 +1,20 @@
-describe('bankAccount', function(){
-  it("creates a new bank account with a name and initial deposit", function(){
-    var newAccount = new BankAccount("Joe Shmoe", 500);
-    expect(newAccount.accountHolder).to.equal("Joe Shmoe");
-    expect(newAccount.balance).to.equal(500);
+describe('ticket', function(){
+  it("displays movie title and time", function(){
+    var newTicket = new Ticket("True Cost", "11:00am", 12);
+    expect(newTicket.movieTitle).to.equal("True Cost");
+    expect(newTicket.movieTime).to.equal("11:00am");
+    expect(newTicket.ticketPrice).to.equal(12);
   });
 
-  it("adds withdrawl method to bank account", function() {
-    var newAccount = new BankAccount("Joe Shmoe", 500);
-    newAccount.withdrawl(200);
-    expect(newAccount.balance).to.equal(300);
+  it("discounts the ticket price for seniors", function() {
+    var newTicket = new Ticket("True Cost", "11:00am", 12);
+    newTicket.seniorDiscount();
+    expect(newTicket.ticketPrice).to.equal(6);
   });
 
-  it("adds deposit method to bank account", function(){
-    var newAccount = new BankAccount("Joe Shmoe", 500);
-    newAccount.deposit(200);
-    expect(newAccount.balance).to.equal(700);
+  it("discounts the ticket price for matinee", function() {
+    var newTicket = new Ticket("True Cost", "11:00am", 12);
+    newTicket.matineeDiscount();
+    expect(newTicket.ticketPrice).to.equal(10);
   });
 });

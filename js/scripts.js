@@ -1,55 +1,36 @@
-function BankAccount(accountHolder, balance) {
-
-  this.accountHolder = accountHolder;
-  this.balance = balance;
-
+function Ticket(movieTitle, movieTime, ticketPrice) {
+  this.movieTitle = movieTitle;
+  this.movieTime = movieTime;
+  this.ticketPrice = ticketPrice;
 }
 
-BankAccount.prototype.withdrawl = function(){
-  var inputtedWithdrawl = parseInt($("input#withdrawl-amount").val());
-  this.balance -= inputtedWithdrawl;
+Ticket.prototype.seniorDiscount = function() {
+  this.ticketPrice -= 6;
 };
 
-BankAccount.prototype.deposit = function(){
-  var inputtedDeposit = parseInt($("input#deposit-amount").val());
-  this.balance += inputtedDeposit;
+Ticket.prototype.matineeDiscount = function() {
+  this.ticketPrice -= 2;
 };
 
-$(document).ready(function() {
+$(document).ready(function(){
 
-  $("form#newAccount").submit(function(event) {
-    event.preventDefault();
+$("form#movie1").submit(function(event) {
+  event.preventDefault();
+  var movieName = $('#movie1-title').text;
+  var movieTime = $('select#movie1-time option:selected').val();
+  var ticketPrice = 12;
+  debugger;
 
-    var inputtedFullName = $("input#full-name").val();
-    var inputtedInitialDeposit = parseInt($("input#initial-deposit").val());
-    var newAccount = new BankAccount(inputtedFullName, inputtedInitialDeposit);
+  newTicket = new Ticket(movieName, movieTime, ticketPrice);
+  if ($("input#movie1-senior").checked){
+    newTicket.seniorDiscount();
+  }
+  else if (newTicket.movieTime ==="11:00am"){
+    newTicket.matineeDiscount();
+  }
 
-    $("#account-holder").text(newAccount.accountHolder);
-    $("#account-balance").text("$ " + newAccount.balance);
+  $("#ticket-info").text("Your ticket for " + newTicket.movieName + " at " + newTicket.movieTime + "will cost $ " + newTicket.ticketPrice);
 
-      $("#new-account").hide();
-      $("#account-info").show();
+});
 
-    $("form#deposit").submit(function(event) {
-      event.preventDefault();
-
-      newAccount.deposit();
-      $("#account-balance").text("$ " + newAccount.balance);
-
-      $("input#deposit-amount").val("");
-
-    });
-
-
-    $("form#withdrawl").submit(function(event) {
-      event.preventDefault();
-
-      newAccount.withdrawl();
-      $("#account-balance").text("$ " + newAccount.balance);
-
-      $("input#withdrawl-amount").val("");
-    });
-
-
-  });
 });
