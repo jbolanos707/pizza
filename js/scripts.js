@@ -9,6 +9,13 @@ function Topping(toppingType, toppingPrice) {
   this.toppingPrice = toppingPrice;
 };
 
+function Order(quantity, pizza, topping) {
+  this.quantity = quantity;
+  this.pizzaType = pizza.pizzaType;
+  this.pizzaSize = pizza.pizzaSize;
+  this.toppingType = topping.toppingType;
+};
+
 // Ticket.prototype.toppings = function() {
 //   var
 // };
