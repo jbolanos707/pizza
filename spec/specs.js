@@ -16,13 +16,11 @@ describe('Order', function() {
     var testOrder = new Order();
     expect(testOrder.pizzas).to.eql([]);
   });
-});
 
-//   it("adds pizza/s to an order", function() {
-//     var testPizza = new Pizza("small", ["pepporini", "mushrooms"]);
-//     var testOrder = new Order(testPizza);
-//     var testPizza2 = new Pizza("large", ["arugula, pear"]);
-//     testOrder.addPizza(testPizza2);
-//     expect(testOrder.pizzas).to.eql([testPizza, testPizza2]);
-//   });
-// });
+  it("adds pizza/s to an order", function() {
+    var testPizza = new Pizza("small", ["pepporini", "mushrooms"]);
+    var testOrder = new Order(testPizza);
+    testOrder.addPizza(testPizza);
+    expect(testOrder.pizzas).to.eql([testPizza]);
+  });
+});
