@@ -1,10 +1,11 @@
-function Pizza(pizzaType, pizzaSize, toppings) {
+function Pizza(pizzaType, pizzaSize, topping) {
   this.pizzaType = pizzaType;
   this.pizzaSize = pizzaSize;
+  this.topping = topping;
 };
-//
-// Ticket.prototype.seniorDiscount = function() {
-//   this.ticketPrice -= 6;
+
+// Ticket.prototype.toppings = function() {
+//   var
 // };
 //
 // Ticket.prototype.matineeDiscount = function() {
