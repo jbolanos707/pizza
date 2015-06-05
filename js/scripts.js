@@ -1,7 +1,7 @@
-function Pizza(pizzaType, pizzaSize, topping) {
+function Pizza(pizzaType, pizzaSize, basePrice) {
   this.pizzaType = pizzaType;
   this.pizzaSize = pizzaSize;
-  this.topping = topping;
+  this.basePrice = basePrice;
 };
 
 // Ticket.prototype.toppings = function() {
