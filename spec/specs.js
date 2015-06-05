@@ -23,4 +23,11 @@ describe('Order', function() {
     testOrder.addPizza(testPizza);
     expect(testOrder.pizzas).to.eql([testPizza]);
   });
+
+  it("calculates the total cost of the order", function() {
+    var testPizza = new Pizza("small", ["pepporini", "mushrooms"]);
+    var testOrder = new Order(testPizza);
+    testOrder.addPizza(testPizza);
+    expect(testOrder.totalCost()).to.eql(12);
+  });
 });

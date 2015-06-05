@@ -32,6 +32,14 @@ Order.prototype.addPizza = function(pizza) {
   this.pizzas.push(pizza);
 }
 
+Order.prototype.totalCost = function() {
+  var totalCost = 0
+  for(var i=0; i< this.pizzas.length; i++) {
+    totalCost += this.pizzas[i].pizzaPrice();
+  }
+  return totalCost;
+}
+
 
 
 
