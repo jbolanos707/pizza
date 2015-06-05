@@ -1,28 +1,20 @@
 describe('Pizza', function() {
-  it("has type, size, and base price", function() {
-    var newPizza = new Pizza("cheese", "medium", 20);
-    expect(newPizza.pizzaType).to.equal("cheese");
-    expect(newPizza.pizzaSize).to.equal("medium");
-    expect(newPizza.basePrice).to.equal(20);
+  it("has size and toppings", function() {
+    var testPizza = new Pizza("small", ["pepporini", "mushrooms"]);
+    expect(testPizza.pizzaSize).to.equal("small");
+    expect(testPizza.toppings).to.eql(["pepporini", "mushrooms"]);
   });
-});
 
-describe('Topping', function() {
-  it("has type and price", function() {
-    var newTopping = new Topping("sausage", 1);
-    expect(newTopping.toppingType).to.equal("sausage");
-    expect(newTopping.toppingPrice).to.equal(1);
+  it("calculates cost of pizza", function() {
+    var testPizza = new Pizza("small", ["pepporini", "mushrooms"]);
+    expect(testPizza.pizzaPrice()).to.equal(12);
   });
 });
 
 describe('Order', function() {
-  it("includes quantity, pizza type, and size, and topping selection", function() {
-    var newPizza = new Pizza("cheese", "medium");
-    var newTopping = new Topping("sausage");
-    var newOrder = new Order(1, newPizza, newTopping);
-    expect(newOrder.quantity).to.equal(1);
-    expect(newOrder.pizzaType).to.equal("cheese");
-    expect(newOrder.pizzaSize).to.equal("medium");
-    expect(newOrder.toppingType).to.equal("sausage");
+  it("contains pizza selection", function() {
+    var testPizza = new Pizza("small", ["pepporini", "mushrooms"]);
+    var testOrder = new Order(newPizza);
+    expect(testOrder.pizzas).to.eql([newPizza]);
   });
 });
