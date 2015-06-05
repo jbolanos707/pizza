@@ -4,6 +4,11 @@ function Pizza(pizzaType, pizzaSize, basePrice) {
   this.basePrice = basePrice;
 };
 
+function Topping(toppingType, toppingPrice) {
+  this.toppingType = toppingType;
+  this.toppingPrice = toppingPrice;
+};
+
 // Ticket.prototype.toppings = function() {
 //   var
 // };
