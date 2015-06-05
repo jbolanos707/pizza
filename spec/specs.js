@@ -12,9 +12,17 @@ describe('Pizza', function() {
 });
 
 describe('Order', function() {
-  it("contains pizza selection", function() {
-    var testPizza = new Pizza("small", ["pepporini", "mushrooms"]);
-    var testOrder = new Order(newPizza);
-    expect(testOrder.pizzas).to.eql([newPizza]);
+  it("initializes order", function() {
+    var testOrder = new Order();
+    expect(testOrder.pizzas).to.eql([]);
   });
 });
+
+//   it("adds pizza/s to an order", function() {
+//     var testPizza = new Pizza("small", ["pepporini", "mushrooms"]);
+//     var testOrder = new Order(testPizza);
+//     var testPizza2 = new Pizza("large", ["arugula, pear"]);
+//     testOrder.addPizza(testPizza2);
+//     expect(testOrder.pizzas).to.eql([testPizza, testPizza2]);
+//   });
+// });

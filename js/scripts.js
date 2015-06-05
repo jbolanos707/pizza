@@ -11,7 +11,7 @@ function Pizza(pizzaSize, toppings) {
 
 Pizza.prototype.pizzaPrice = function() {
   var pizzaPrice = 0;
-debugger;
+
   if(this.pizzaSize === "small") {
     pizzaPrice += 10;
   } else if (this.pizzaSize === "medium") {
@@ -24,62 +24,16 @@ debugger;
   return pizzaPrice;
 };
 
-// function Topping(toppingType, toppingPrice) {
-//   this.toppingType = toppingType;
-//   this.toppingPrice = toppingPrice;
-// };
-//
-// function Order(quantity, pizza, topping) {
-//   this.quantity = quantity;
-//   this.pizzaType = pizza.pizzaType;
-//   this.pizzaSize = pizza.pizzaSize;
-//   this.toppingType = topping.toppingType;
-// };
-//   var pizzaCost = 0;
-// // };
-// //
-// // // Pizza.prototype.sizePrice = function(size) {
-// // //   this.size = size;
-//
-//   if(pizzaSize === "small") {
-//     pizzaPrice += 10;
-//   } else if (pizzaSize === "medium") {
-//     pizzaPrice += 20;
-//   } else (pizzaSize === "large") {
-//     pizzaPrice += 30;
-//   };
-// };
+function Order() {
+  this.pizzas = [];
+}
 
-// function Topping(toppingType, toppingPrice) {
-//   this.toppingType = toppingType;
-//   this.toppingPrice = toppingPrice;
-// };
-//
-// function Order(quantity, pizza, topping) {
-//   this.quantity = quantity;
-//   this.pizzaType = pizza.pizzaType;
-//   this.pizzaSize = pizza.pizzaSize;
-//   this.toppingType = topping.toppingType;
-// };
-//
-// Order.prototype.price = function() {
-//   var pizzaPrice = 0;
-//   var sizeArray = ["small", "medium", "large"];
-//
-//   if (this.pizzaSize = sizeArray[0]) {
-//     pizzaPrice += 10;
-//   }
-//   else if (this.pizzaSize = sizeArray[1]) {
-//     pizzaPrice += 20;
-//   }
-//   else (this.pizzaSize) {
-//     pizzaPrice += 30;
-//   }
-//
-//   var toppingPrice = 1;
-//
-//   if (this.toppingType)
-// };
+// Order.prototype.addPizza = function(pizza) {
+//   this.pizzas.push(pizza);
+// }
+
+
+
 
 
 
