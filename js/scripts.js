@@ -1,13 +1,7 @@
 function Pizza(pizzaSize, toppings) {
   this.pizzaSize = pizzaSize;
   this.toppings = toppings;
-};
-
-function Pizza(pizzaSize, toppings) {
-  this.pizzaSize = pizzaSize;
-  this.toppings = toppings;
 }
-
 
 Pizza.prototype.pizzaPrice = function() {
   var pizzaPrice = 0;
@@ -30,42 +24,53 @@ function Order() {
 
 Order.prototype.addPizza = function(pizza) {
   this.pizzas.push(pizza);
-}
+};
 
 Order.prototype.totalCost = function() {
-  var totalCost = 0
+  var totalCost = 0;
   for(var i=0; i< this.pizzas.length; i++) {
     totalCost += this.pizzas[i].pizzaPrice();
   }
   return totalCost;
-}
+};
 
 
 
+$(document).ready(function(){
 
+  $("form#add-pizza").submit(function(event) {
+    event.preventDefault();
 
+    var order = new Order($("input#name").val());
 
+    var checkedSize = $(this).find("input[type='checkbox'][name='size']:checked");
+    var pizzaSize = [];
+    var checkedToppings = $(this).find("input[type='checkbox'][name='topping']:checked");
+    var toppings = [];
 
+    checkedSize.each(function() {
+      pizzaSize.push(this.value);
+    });
 
-// $(document).ready(function(){
-//
-// $("form#movie1").submit(function(event) {
-//   event.preventDefault();
-//   var movieName = $('#movie1-title').text;
-//   var movieTime = $('select#movie1-time option:selected').val();
-//   var ticketPrice = 12;
-//   debugger;
-//
-//   newTicket = new Ticket(movieName, movieTime, ticketPrice);
-//   if ($("input#movie1-senior").checked){
-//     newTicket.seniorDiscount();
-//   }
-//   else if (newTicket.movieTime ==="11:00am"){
-//     newTicket.matineeDiscount();
-//   }
-//
-//   $("#ticket-info").text("Your ticket for " + newTicket.movieName + " at " + newTicket.movieTime + "will cost $ " + newTicket.ticketPrice);
-//
-// });
-//
-// });
+    checkedtoppings.each(function() {
+      toppings.push(this.value);
+    });
+
+    newPizza = new Pizza(pizzaSize, toppings);
+    newOrder.addPizza;
+
+    $("button#submit-order").on("click", function(event) {
+      event.preventDefault();
+    })
+
+    $("#pizza-list").append(newPizza.pizzaSize + " pizza with " + newPizza.toppings + " $" + newPizza.pizzaPrice() + '<br>');
+    $("#order").text("Your total for " + newOrder.pizzas.length + "pizzas is $" + newOrder.totalCost() +".");
+
+    // $(".pizza-size input:checked").each(function() {
+    //   this.checked = false;
+    //
+    // $(".toppings input:checked").each(function() {
+    //   this.checked = false;
+    });
+  });
+});

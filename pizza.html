@@ -1,42 +1,69 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+
     <script src="js/jquery-1.11.3.js"></script>
     <script src="js/scripts.js"></script>
-    <title>Movie</title>
+
+    <title>Pizza</title>
   </head>
   <body>
-    <div class="container">
-    <h1>Portland Theater</h1>
-  <br><br>
-  <div class="row">
-    <form id="movie1">
-      <div class='col-sm-6 col-md-4'>
-        <div class="thumbnail">
-          <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTGiJZzW9-Uq1vA5D52Ma0H-RwYFalLmxkM_f4mc9nbWX8wOFG' alt='mad max'>
-          <div class='caption'>
-          <span id='movie1-title'><h3>Mad Max - Fury Road</h3></span>
-          <select class="form-control" id="movie1-time">
-            <option>11:00am</option>
-            <option>7:00pm</option>
-            <option>10:00pm</option>
-          </select>
-          <br>
-          <p>
-            <button class='btn btn-primary' type="submit">Buy Ticket</button>
-          </p>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" value="" id="movie1-senior">
-              Apply Senior Discount
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-  </form>
+<div class="container">
 
+  <h1>Portland Pizza</h1>
+  <br><br>
+  <div class="new-pizza">
+  <form action="submit" id="add-pizza">
+  <h2>1. Choose Pizza Size</h2>
+    <div class="checkbox pizza-size">
+      <label>
+        <input type="checkbox" name:"size" value="Small">Small $10
+      </label>
+    </div>
+    <div class="checkbox pizza-size">
+      <label>
+        <input type="checkbox" name="size" value="Medium">Medium $20
+      </label>
+    </div>
+    <div class="checkbox pizza-size">
+      <label>
+        <input type="checkbox" name="size" value="Large">Large $30
+      </label>
+    </div>
+  <br><br>
+  <h2>2. Choose Toppings</h2>
+  <div class="checkbox toppings">
+    <label>
+      <input type="checkbox" name="topping" value="arugula">Arugula +$1
+    </label>
+  </div>
+  <div class="checkbox toppings">
+    <label>
+      <input type="checkbox" name="topping" value="Pepperoni">Pepperoni +$1
+    </label>
+  </div>
+  <div class="checkbox toppings" id=>
+    <label>
+      <input type="checkbox" name="topping" value="Mushrooms">Mushrooms +$1
+    </label>
+  </div>
+  <br><br>
+  <h2>3. Submit Order</h2>
+    <button class="btn btn-success" type="submit" id="submit-order">Place Order</button>
+  </form>
+  </div>
+
+  <div class="pizza-order" id="pizza-order">
+    <h2>Your Order</h2>
+    <ul id="pizza-list">
+    </ul>
+    <span id="order"></span>
+  </div>
+  <br>
+  <a href="pizza.html">Place New Order</a>
 
 
 </body>
